@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "nome": "Jack",
+      "soprannome": "...sta in cucina con Tina",
+      "descrizione": "Una giornata complicata...",
+      "trofei": 110,
+      "kill": 4,
+      "danni": 376,
+      "partite": 6,
+      "posizioni": 20,
+      "sniperImage": "https://i.ibb.co/hFv1fwp/Jack-530-255.jpg",
+      "active": true,
+      "edit": false
+    },
+
+    {
+      "id": 2,
+      "nome":"Samantha",
+      "soprannome": "...la salamantra",
+      "descrizione": "Questo è il mio posto!",
+      "trofei": 189,
+      "kill": 11,
+      "danni": 963,
+      "partite": 7,
+      "posizioni": 20,
+      "sniperImage": "https://i.ibb.co/BP1RHdw/Samantha-530-255.jpg",
+      "active": false,
+      "edit": false
+    }
+]

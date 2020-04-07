@@ -8,6 +8,8 @@ const app = express();
 
 const PRODUCT_DATA_FILE = path.join(__dirname, 'server-product-data.json');
 const CART_DATA_FILE = path.join(__dirname, 'server-cart-data.json');
+//Variabile per gli snipers
+const SNIPER_DATA_FILE = path.join(__dirname, 'server-sniper-data.json');
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -20,6 +22,9 @@ app.use((req, res, next) => {
   res.setHeader('Expires', '0');
   next();
 });
+
+
+//Metodi nativi
 
 app.get('/products', (req, res) => {
   fs.readFile(PRODUCT_DATA_FILE, (err, data) => {
@@ -83,4 +88,15 @@ app.post('/cart/delete/all', (req, res) => {
 
 app.listen(app.get('port'), () => {
   console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
+});
+
+
+
+//Metodi per gli snipers
+
+app.get('/snipers', (req, res) => {
+  fs.readFile(SNIPER_DATA_FILE, (err, data) => {
+    res.setHeader('Cache-Control', 'no-cache');
+    res.json(JSON.parse(data));
+  });
 });
