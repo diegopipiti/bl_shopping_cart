@@ -1,7 +1,7 @@
 <template>
     <div class="section">
             <article class="media noBorder" 
-                v-for="sniper in sniperItems" 
+                v-for="sniper in sniperItemsTrofei" 
                 v-bind:key="sniper.id"
                 v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
                 
@@ -24,8 +24,10 @@
 
         computed: {
             ...mapGetters([
-                'sniperItems'
-            ])
+                'sniperItemsTrofei',
+                'sniperItemsReverse'
+            ]),
+
         },
 
         created(){

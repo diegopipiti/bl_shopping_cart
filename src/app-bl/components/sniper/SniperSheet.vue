@@ -9,7 +9,7 @@
             <div class="content">
                 <p>
                     <strong>
-                        <div class="has-text-info">{{sniper.nome}}</div> &nbsp
+                        <div class="has-text-info blue-text">{{sniper.nome}}</div> &nbsp
                         <div class="has-text-info" ><font color="red">{{sniper.soprannome}}</font></div>
                         <span class="tag is-small">#{{sniper.id}}</span>
                     </strong>
@@ -68,7 +68,7 @@ export default {
 }
 
 .blue-text{
-  color: blue;
+  color: #3c296b;
   font-weight: 800; 
 }
 
