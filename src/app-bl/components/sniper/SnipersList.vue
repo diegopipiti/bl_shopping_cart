@@ -1,26 +1,41 @@
 <template>
-    
+    <div class="section">
+            <article class="media noBorder" 
+                v-for="sniper in sniperItems" 
+                v-bind:key="sniper.id"
+                v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
+                
+                <SniperSheet
+                v-bind:sniper="sniper"
+                >
+                </SniperSheet>
+
+            </article>
+        </div>
 </template>
 
 
 <script>
-import {mapGetters} from 'vuex';
+    import {mapGetters} from 'vuex';
+    import SniperSheet from './SniperSheet';
 
-export default {
-    name: "SnipersList",
+    export default {
+        name: "SnipersList",
 
-    computed: {
-        ...mapGetters([
-            'sniperItems'
-        ])
-    },
+        computed: {
+            ...mapGetters([
+                'sniperItems'
+            ])
+        },
 
-    created(){
-        this.$store.dispatch('getSniperItems');
-    },
-    
-    
-}
+        created(){
+            this.$store.dispatch('getSniperItems');
+        },
+
+        components: {
+            SniperSheet
+        }
+    }
 </script>
 
 
