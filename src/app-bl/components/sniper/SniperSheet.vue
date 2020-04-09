@@ -24,7 +24,7 @@
                                 <p class="lista-piccola"><span class="blue-text">Danni:</span> {{sniper.danni}}</p>
                             </div>
                             <div class= "column is-half" >
-                                <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{(sniper.trofei / sniper.partite).toFixed(1)}}</p>
+                                <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{trofei_x_partita(sniper.id)}}</p>
                                 <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{(sniper.kill / sniper.partite).toFixed(1)}}</p>
                                 <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{(sniper.danni / sniper.partite).toFixed(1)}}</p>
                                 <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{(sniper.posizioni / sniper.partite).toFixed(1)}}</p>
@@ -35,7 +35,7 @@
         </div>
         
         <div class="media-right">
-            <div class="icon is-small" v-on:click="editSniper(sniper.id)">
+            <div class="icon is-small" v-on:click="trofeiXpartita(sniper.id)">
                 <div><strong class="has-text-info">{{sniper.trofei}}</strong></div>
                 <i class="fa fa-pencil-square edit-icon"></i>
             </div>
@@ -47,7 +47,21 @@
 <script>
 export default {
     name: "SniperSheet",
-    props:['sniper']
+    props:['sniper'],
+
+    computed: {
+        trofei_x_partita(sniperID){
+            const sniperObj = this.$store.sniper.state.sniperItems.filter(sniper => sniper.id === sniperID);
+            //return sniperObj.trofei/sniperObj.partite.toFixed(1);
+        }
+        
+    },
+
+    methods: {
+        trofeiXpartita(){
+        }
+        
+    }
     
 }
 </script>

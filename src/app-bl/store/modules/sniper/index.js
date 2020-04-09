@@ -15,12 +15,12 @@ const actions = {
       axios.get('/api/snipers').then((response) => {
         commit('UPDATE_SNIPER_ITEMS', response.data)
       });
-    }
+    },
   }
 
 const getters = {
     sniperItemsTrofei: state => state.sniperItems.sort((a,b) => b.trofei/b.partite - a.trofei/a.partite),
-    sniperItemsReverse: state => state.sniperItems.sort((a,b) => a.trofei/a.partite - b.trofei/b.partite)
+    sniperItemsReverse: state => state.sniperItems.sort((a,b) => a.trofei/a.partite - b.trofei/b.partite),
 };
 
 const sniperModule = {
