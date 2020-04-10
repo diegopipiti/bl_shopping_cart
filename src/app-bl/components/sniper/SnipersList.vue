@@ -1,7 +1,7 @@
 <template>
     <div class="section">
             <article class="media noBorder" 
-                v-for="sniper in sniperItemsTrofei" 
+                v-for="sniper in sniperItemsNormal" 
                 v-bind:key="sniper.id"
                 v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
                 
@@ -11,6 +11,11 @@
                 </SniperSheet>
 
             </article>
+
+            <button  class="button is-primary" @click=ReverseOrder()>
+                ReverseOrder 
+            </button>
+
         </div>
 </template>
 
@@ -21,13 +26,20 @@
 
     export default {
         name: "SnipersList",
-
+   
         computed: {
             ...mapGetters([
                 'sniperItemsTrofei',
-                'sniperItemsReverse'
+                'sniperItemsReverse',
+                'sniperItemsNormal'
             ]),
 
+        },
+
+        methods:{
+            ReverseOrder() {
+                this.$store.dispatch('getSniperItemsReverse');
+            }
         },
 
         created(){

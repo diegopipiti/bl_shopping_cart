@@ -16,9 +16,16 @@ const actions = {
         commit('UPDATE_SNIPER_ITEMS', response.data)
       });
     },
+
+    getSniperItemsReverse ({ commit, getters }) {
+      const reverse = getters.sniperItemsTrofei;
+      commit('UPDATE_SNIPER_ITEMS', reverse);
+
+    },
   }
 
 const getters = {
+    sniperItemsNormal: state => state.sniperItems,
     sniperItemsTrofei: state => state.sniperItems.sort((a,b) => b.trofei/b.partite - a.trofei/a.partite),
     sniperItemsReverse: state => state.sniperItems.sort((a,b) => a.trofei/a.partite - b.trofei/b.partite),
     getSniperById: (state) => (id) => {

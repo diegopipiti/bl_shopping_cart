@@ -25,9 +25,9 @@
                             </div>
                             <div class= "column is-half" >
                                 <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{trofei_x_partita(sniper.id)}}</p>
-                                <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{(sniper.kill / sniper.partite).toFixed(1)}}</p>
-                                <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{(sniper.danni / sniper.partite).toFixed(1)}}</p>
-                                <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{(sniper.posizioni / sniper.partite).toFixed(1)}}</p>
+                                <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{danni_x_partita(sniper.id)}}</p>
+                                <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{kill_x_partita(sniper.id)}}</p>
+                                <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{posizioni_x_partita(sniper.id)}}</p>
                             </div>
                         </div>
                 </p>
@@ -56,7 +56,19 @@ export default {
     methods: {
         trofei_x_partita(sniperID){
             const sniperObj = this.$store.getters.getSniperById(sniperID);
-            alert(sniperObj.nome);
+            return (sniperObj.trofei/sniperObj.partite).toFixed(1);
+        },
+                danni_x_partita(sniperID){
+            const sniperObj = this.$store.getters.getSniperById(sniperID);
+            return (sniperObj.danni/sniperObj.partite).toFixed(1);
+        },
+                kill_x_partita(sniperID){
+            const sniperObj = this.$store.getters.getSniperById(sniperID);
+            return (sniperObj.kill/sniperObj.partite).toFixed(1);
+        },
+                posizioni_x_partita(sniperID){
+            const sniperObj = this.$store.getters.getSniperById(sniperID);
+            return (sniperObj.posizioni/sniperObj.partite).toFixed(1);
         }
     }
     

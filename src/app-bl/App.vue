@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
+    <!-- <div class="container">
       <div class="columns">
 
         <div class="column is-3">
@@ -12,12 +12,12 @@
         </div>
 
       </div>
+    </div> -->
 
-      <div>
+    <div>
         <SnipersList />
-      </div>
-
     </div>
+
   </div>
 </template>
 
@@ -44,7 +44,7 @@ html, body {
 #app {
   height: 100%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 

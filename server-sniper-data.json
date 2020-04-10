@@ -27,5 +27,20 @@
       "sniperImage": "https://i.ibb.co/BP1RHdw/Samantha-530-255.jpg",
       "active": false,
       "edit": false
+    },
+
+    {
+      "id": 3,
+      "nome":"Vulpix",
+      "soprannome": "...la leggenda.",
+      "descrizione": "GAME OVER!",
+      "trofei": 139,
+      "kill": 9,
+      "danni": 874,
+      "partite": 5,
+      "posizioni": 14,
+      "sniperImage": "https://i.ibb.co/98PXdkD/Vulpix.jpg",
+      "active": false,
+      "edit": false
     }
 ]
