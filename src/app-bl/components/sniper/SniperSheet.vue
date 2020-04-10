@@ -35,9 +35,9 @@
         </div>
         
         <div class="media-right">
-            <div class="icon is-small" v-on:click="trofeiXpartita(sniper.id)">
+            <div class="icon is-small">
                 <div><strong class="has-text-info">{{sniper.trofei}}</strong></div>
-                <i class="fa fa-pencil-square edit-icon"></i>
+                <i class="fa fa-pencil-square edit-icon" @click=trofei_x_partita(sniper.id)></i>
             </div>
         </div>
     </div>
@@ -50,17 +50,14 @@ export default {
     props:['sniper'],
 
     computed: {
-        trofei_x_partita(sniperID){
-            const sniperObj = this.$store.sniper.state.sniperItems.filter(sniper => sniper.id === sniperID);
-            //return sniperObj.trofei/sniperObj.partite.toFixed(1);
-        }
-        
+
     },
 
     methods: {
-        trofeiXpartita(){
+        trofei_x_partita(sniperID){
+            const sniperObj = this.$store.getters.getSniperById(sniperID);
+            alert(sniperObj.nome);
         }
-        
     }
     
 }
