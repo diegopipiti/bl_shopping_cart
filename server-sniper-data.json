@@ -42,5 +42,35 @@
       "sniperImage": "https://i.ibb.co/98PXdkD/Vulpix.jpg",
       "active": false,
       "edit": false
+    },
+
+    {
+      "id": 4,
+      "nome":"Jack",
+      "soprannome": "il nero.",
+      "descrizione": "Vendicherò mio cugino!",
+      "trofei": 90,
+      "kill": 2,
+      "danni": 426,
+      "partite": 4,
+      "posizioni": 11,
+      "sniperImage": "https://i.ibb.co/rkJTpmc/jack-il-nero.jpg",
+      "active": false,
+      "edit": false
+    },
+
+    {
+      "id": 5,
+      "nome":"Angelico",
+      "soprannome": "...con le ali..",
+      "descrizione": "Non perderò mai, sono immune",
+      "trofei": 792,
+      "kill": 57,
+      "danni": 7447,
+      "partite": 15,
+      "posizioni": 36,
+      "sniperImage": "https://i.ibb.co/64RLhbN/angeliko.jpg",
+      "active": false,
+      "edit": false
     }
 ]

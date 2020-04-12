@@ -16,6 +16,8 @@
                 ReverseOrder 
             </button>
 
+            <ButtonRow />
+
         </div>
 </template>
 

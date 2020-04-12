@@ -17,16 +17,16 @@
                         <p class="blockquote">{{sniper.descrizione}}</p>
                     <br>
                         <div class= "columns">
-                            <div class="column is-half" > 
+                            <div class="column is-one-third" > 
                                 <p class="lista-piccola"><span class="red-text">Trofei: </span>{{sniper.trofei}}</p>
                                 <p class="lista-piccola"><span class="blue-text">Kill:</span> {{sniper.kill}}</p>
                                 <p class="lista-piccola"><span class="red-text">Partite:</span> {{sniper.partite}}</p>
                                 <p class="lista-piccola"><span class="blue-text">Danni:</span> {{sniper.danni}}</p>
                             </div>
-                            <div class= "column is-half" >
+                            <div class= "column is-two-third" >
                                 <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{trofei_x_partita(sniper.id)}}</p>
-                                <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{danni_x_partita(sniper.id)}}</p>
-                                <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{kill_x_partita(sniper.id)}}</p>
+                                <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{kill_x_partita(sniper.id)}}</p>
+                                <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{danni_x_partita(sniper.id)}}</p>
                                 <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{posizioni_x_partita(sniper.id)}}</p>
                             </div>
                         </div>
