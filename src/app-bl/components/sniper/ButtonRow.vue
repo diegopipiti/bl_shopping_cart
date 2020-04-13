@@ -1,9 +1,9 @@
 <template>
     <div>
-        <button @click="onJackClick" class="ui button">Jack</button>
-        <button @click="onSamanthaClick" class="ui button">Samantha</button>
-        <button @click="onVulpixClick" class="ui button">Vulpix</button>
-        <button @click="onJack_il_neroClick" class="ui button">Jack il nero</button>
+        <button @click="onButtonClick" name = "buttonJCK" value = "Jack" class="ui button">Jack</button>
+        <button @click="onButtonClick" name = "buttonSMN" value = "Samantha" class="ui button">Samantha</button>
+        <button @click="onButtonClick" name = "buttonVLP" value = "Vulpix" class="ui button">Vulpix</button>
+        <button @click="onButtonClick" name = "buttonJNR" value = "Jack il nero" class="ui button">Jack il nero</button>
     </div>
 </template>
 
@@ -13,18 +13,10 @@ export default {
     name: 'ButtonRow',
 
     methods: {
-        onJackClick(evt) {
-        console.log('The user clicked button-Jack', evt);
+        onButtonClick(evt) {
+        const button = evt.target;
+        console.log(`The user clicked ${button.name}: ${button.value}`);
         },
-        onSamanthaClick(evt) {
-        console.log('The user clicked button-Samantha', evt);
-        },
-        onVulpixClick(evt) {
-        console.log('The user clicked button-Vulpix', evt);
-        },
-        onJack_il_neroClick(evt) {
-        console.log('The user clicked button-Jack il nero', evt);
-        }
     }
 }
 </script>

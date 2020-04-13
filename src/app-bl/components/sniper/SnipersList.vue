@@ -6,8 +6,7 @@
                 v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
                 
                 <SniperSheet
-                v-bind:sniper="sniper"
-                >
+                v-bind:sniper="sniper">
                 </SniperSheet>
 
             </article>
@@ -16,8 +15,9 @@
                 ReverseOrder 
             </button>
 
-            <ButtonRow />
-
+            <InputRisultati
+            v-bind:sniperItemsNormal="sniperItemsNormal">
+            </InputRisultati>
         </div>
 </template>
 
@@ -25,6 +25,10 @@
 <script>
     import {mapGetters} from 'vuex';
     import SniperSheet from './SniperSheet';
+    import InputRisultati from './InputRisultati';
+
+
+
 
     export default {
         name: "SnipersList",
@@ -49,7 +53,8 @@
         },
 
         components: {
-            SniperSheet
+            SniperSheet,
+            InputRisultati
         }
     }
 </script>

@@ -72,5 +72,20 @@
       "sniperImage": "https://i.ibb.co/64RLhbN/angeliko.jpg",
       "active": false,
       "edit": false
-    }
+    },
+
+    {
+      "id": 5,
+      "nome":"Pamela",
+      "soprannome": "BayWatch",
+      "descrizione": "Sexy paguro!",
+      "trofei": 90,
+      "kill": 2,
+      "danni": 426,
+      "partite": 4,
+      "posizioni": 11,
+      "sniperImage": "https://i.ibb.co/rkJTpmc/jack-il-nero.jpg",
+      "active": false,
+      "edit": false
+    },
 ]
