@@ -7,7 +7,8 @@
                         v-bind:key="sniper.id"
                         v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
                         <SniperSheet
-                        v-bind:sniper="sniper">
+                        v-bind:sniper="sniper"
+                        v-bind:rank="sniperItemsDanni.indexOf(sniper) + 1">
                         </SniperSheet>
                     </article>
                 </div>
@@ -18,7 +19,8 @@
                         v-bind:key="sniper.id"
                         v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
                         <SniperSheet
-                        v-bind:sniper="sniper">
+                        v-bind:sniper="sniper"
+                        v-bind:rank="sniperItemsKill.indexOf(sniper) + 1">
                         </SniperSheet>
                     </article>
                 </div>
