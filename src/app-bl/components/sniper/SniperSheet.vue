@@ -36,7 +36,7 @@
         
         <div class="media-right">
             <div class="icon is-small">
-                <div><strong class="has-text-info">{{sniper.trofei}}</strong></div>
+                <div><strong class="has-text-info">{{danni_x_partita(sniper.id)}}</strong></div>
                 <i class="fa fa-pencil-square edit-icon" @click=trofei_x_partita(sniper.id)></i>
             </div>
         </div>

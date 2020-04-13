@@ -22,12 +22,19 @@ const actions = {
       commit('UPDATE_SNIPER_ITEMS', reverse);
 
     },
+
+    getSniperItemsDanni ({ commit, getters }) {
+      const reverse = getters.sniperItemsDanni;
+      commit('UPDATE_SNIPER_ITEMS', reverse);
+
+    },
   }
 
 const getters = {
     sniperItemsNormal: state => state.sniperItems,
     sniperItemsTrofei: state => state.sniperItems.sort((a,b) => b.trofei/b.partite - a.trofei/a.partite),
     sniperItemsReverse: state => state.sniperItems.sort((a,b) => a.trofei/a.partite - b.trofei/b.partite),
+    sniperItemsDanni: state => state.sniperItems.sort((a,b) => b.danni/b.partite - a.danni/a.partite),
     getSniperById: (state) => (id) => {
       return state.sniperItems.find(sniper => sniper.id === id)
     }

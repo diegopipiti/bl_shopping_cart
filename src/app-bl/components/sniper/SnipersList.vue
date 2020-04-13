@@ -44,7 +44,7 @@
 
         methods:{
             ReverseOrder() {
-                this.$store.dispatch('getSniperItemsReverse');
+                this.$store.dispatch('getSniperItemsDanni');
             }
         },
 
