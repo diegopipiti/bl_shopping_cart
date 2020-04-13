@@ -1,15 +1,28 @@
 <template>
-    <div class="section">
-            <article class="media noBorder" 
-                v-for="sniper in sniperItemsNormal" 
-                v-bind:key="sniper.id"
-                v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
-                
-                <SniperSheet
-                v-bind:sniper="sniper">
-                </SniperSheet>
+    <div class="container is-fullhd">
+            <div class = "columns">
+                <div class="column is-half">
+                    <article class="media noBorder" 
+                        v-for="sniper in sniperItemsDanni" 
+                        v-bind:key="sniper.id"
+                        v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
+                        <SniperSheet
+                        v-bind:sniper="sniper">
+                        </SniperSheet>
+                    </article>
+                </div>
 
-            </article>
+                <div class="column is-half">
+                    <article class="media noBorder" 
+                        v-for="sniper in sniperItemsKill" 
+                        v-bind:key="sniper.id"
+                        v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
+                        <SniperSheet
+                        v-bind:sniper="sniper">
+                        </SniperSheet>
+                    </article>
+                </div>
+            </div>
 
             <button  class="button is-primary" @click=ReverseOrder()>
                 ReverseOrder 
@@ -32,12 +45,15 @@
 
     export default {
         name: "SnipersList",
+
    
         computed: {
             ...mapGetters([
                 'sniperItemsTrofei',
                 'sniperItemsReverse',
-                'sniperItemsNormal'
+                'sniperItemsNormal',
+                'sniperItemsKill',
+                'sniperItemsDanni'
             ]),
 
         },
@@ -61,5 +77,7 @@
 
 
 <style>
-
+    .wrapper{
+        width: auto;
+    }
 </style>

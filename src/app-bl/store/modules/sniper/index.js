@@ -35,6 +35,8 @@ const getters = {
     sniperItemsTrofei: state => state.sniperItems.sort((a,b) => b.trofei/b.partite - a.trofei/a.partite),
     sniperItemsReverse: state => state.sniperItems.sort((a,b) => a.trofei/a.partite - b.trofei/b.partite),
     sniperItemsDanni: state => state.sniperItems.sort((a,b) => b.danni/b.partite - a.danni/a.partite),
+    sniperItemsKill: state => state.sniperItems.sort((a,b) => b.kill/b.partite - a.kill/a.partite),
+    
     getSniperById: (state) => (id) => {
       return state.sniperItems.find(sniper => sniper.id === id)
     }
