@@ -36,7 +36,7 @@
                 <label>Sniper</label>
                 <select v-model="fields.sniper" class="ui fluid search dropdown">
                     <option disabled value="">Please select one</option>
-                    <option v-for="sniper in sniperItemsNormal" v-bind:value="sniper.nome">
+                    <option v-for="sniper in sniperItemsNormal" v-bind:value="sniper">
                         {{sniper.nome}}
                     </option>
                 </select>
@@ -85,6 +85,8 @@ export default {
             evt.preventDefault();
             this.fieldErrors = this.validateForm(this.fields);
             if (Object.keys(this.fieldErrors).length) {return};
+            this.$store.dispatch('getSniperItemsDanni', this.fields.sniper);
+           
         },
 
         validateForm(fields){

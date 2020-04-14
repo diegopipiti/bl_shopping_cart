@@ -28,6 +28,10 @@ const actions = {
       commit('UPDATE_SNIPER_ITEMS', reverse);
 
     },
+
+    modificaSniper ({commit, sniperObj}){
+      
+    }
   }
 
 const getters = {
