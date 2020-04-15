@@ -85,7 +85,10 @@ export default {
             evt.preventDefault();
             this.fieldErrors = this.validateForm(this.fields);
             if (Object.keys(this.fieldErrors).length) {return};
-            this.$store.dispatch('getSniperItemsDanni', this.fields.sniper);
+            
+            this.fields.sniper.trofei = this.fields.sniper.trofei + this.fields.trofei;
+
+            this.$store.dispatch('modificaSniper', this.fields.sniper);
            
         },
 

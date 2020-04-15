@@ -17,6 +17,7 @@ const actions = {
       });
     },
 
+
     getSniperItemsReverse ({ commit, getters }) {
       const reverse = getters.sniperItemsTrofei;
       commit('UPDATE_SNIPER_ITEMS', reverse);
@@ -29,8 +30,11 @@ const actions = {
 
     },
 
-    modificaSniper ({commit, sniperObj}){
-      
+    modificaSniper ({commit}, sniper){
+      axios.post('/api/snipers', sniper).then((response) => {
+        commit('UPDATE_SNIPER_ITEMS', response.data)
+      });
+
     }
   }
 

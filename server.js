@@ -86,9 +86,7 @@ app.post('/cart/delete/all', (req, res) => {
   });
 });
 
-app.listen(app.get('port'), () => {
-  console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
-});
+
 
 
 
@@ -99,4 +97,37 @@ app.get('/snipers', (req, res) => {
     res.setHeader('Cache-Control', 'no-cache');
     res.json(JSON.parse(data));
   });
+});
+
+app.post('/snipers', (req, res) => {
+
+  console.log('ok1');
+
+  fs.readFile(SNIPER_DATA_FILE, (err, data) => {
+    const sniperItems = JSON.parse(data);
+    const newSniper = req.body;
+
+    console.log(newSniper.nome);
+
+    sniperItems.array.forEach(element => {
+      if (element.id === newSniper.id) {
+          element = newSniper;
+
+          console.log(element);
+      }
+    });
+    fs.writeFile(SNIPER_DATA_FILE, JSON.stringify(sniperItems, null, 4), () => {
+      
+      console.log(sniperItems);
+      
+      res.setHeader('Cache-Control', 'no-cache');
+      res.json(sniperItems);
+    });
+  });
+});
+
+
+
+app.listen(app.get('port'), () => {
+  console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
