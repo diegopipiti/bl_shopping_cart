@@ -86,7 +86,11 @@ export default {
             this.fieldErrors = this.validateForm(this.fields);
             if (Object.keys(this.fieldErrors).length) {return};
             
-            this.fields.sniper.trofei = this.fields.sniper.trofei + this.fields.trofei;
+            this.fields.sniper.trofei = parseInt(this.fields.sniper.trofei) +  parseInt(this.fields.trofei);
+            this.fields.sniper.danni = parseInt(this.fields.sniper.danni) +  parseInt(this.fields.danni);
+            this.fields.sniper.kill = parseInt(this.fields.sniper.kill) +  parseInt(this.fields.kill);
+            this.fields.sniper.posizione = parseInt(this.fields.sniper.posizione) +  parseInt(this.fields.posizione);
+            this.fields.sniper.partite = parseInt(this.fields.sniper.partite) +  parseInt(this.fields.partite);
 
             this.$store.dispatch('modificaSniper', this.fields.sniper);
            

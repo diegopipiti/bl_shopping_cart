@@ -32,10 +32,6 @@
                 </div>
             </div>
 
-            <button  class="button is-primary" @click=ReverseOrder()>
-                ReverseOrder 
-            </button>
-
             <InputRisultati
             v-bind:sniperItemsNormal="sniperItemsNormal">
             </InputRisultati>
