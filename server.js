@@ -109,14 +109,16 @@ app.post('/snipers', (req, res) => {
 
     console.log(newSniper.nome);
 
-    sniperItems.array.forEach(element => {
+    sniperItems.forEach(element => {
       if (element.id === newSniper.id) {
-          element = newSniper;
+          let indice = sniperItems.indexOf(element);
 
-          console.log(element);
+          console.log(indice);
+
+          sniperItems.splice(indice, 1, newSniper);
       }
     });
-    fs.writeFile(SNIPER_DATA_FILE, JSON.stringify(sniperItems, null, 4), () => {
+    fs.writeFile(SNIPER_DATA_FILE, JSON.stringify(sniperItems, null, 4), () => {    
       
       console.log(sniperItems);
       
