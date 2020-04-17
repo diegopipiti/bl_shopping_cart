@@ -82,7 +82,7 @@ export default {
 
     methods:{
         submitForm(evt) {
-            evt.preventDefault();
+            
             this.fieldErrors = this.validateForm(this.fields);
             if (Object.keys(this.fieldErrors).length) {return};
             
@@ -93,6 +93,16 @@ export default {
             this.fields.sniper.partite = parseInt(this.fields.sniper.partite) +  parseInt(this.fields.partite);
 
             this.$store.dispatch('modificaSniper', this.fields.sniper);
+
+
+            this.fields.trofei = null;
+            this.fields.danni = null;
+            this.fields.kill = null;
+            this.fields.posizione = null;
+            this.fields.partite = null;
+            this.fields.sniper = null;
+
+            evt.preventDefault();
            
         },
 

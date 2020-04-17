@@ -100,28 +100,17 @@ app.get('/snipers', (req, res) => {
 });
 
 app.post('/snipers', (req, res) => {
-
-  console.log('ok1');
-
-  fs.readFile(SNIPER_DATA_FILE, (err, data) => {
+    fs.readFile(SNIPER_DATA_FILE, (err, data) => {
     const sniperItems = JSON.parse(data);
     const newSniper = req.body;
-
-    console.log(newSniper.nome);
 
     sniperItems.forEach(element => {
       if (element.id === newSniper.id) {
           let indice = sniperItems.indexOf(element);
-
-          console.log(indice);
-
           sniperItems.splice(indice, 1, newSniper);
       }
     });
     fs.writeFile(SNIPER_DATA_FILE, JSON.stringify(sniperItems, null, 4), () => {    
-      
-      console.log(sniperItems);
-      
       res.setHeader('Cache-Control', 'no-cache');
       res.json(sniperItems);
     });
